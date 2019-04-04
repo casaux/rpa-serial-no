@@ -1,0 +1,357 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>myCASA</title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="initial-scale=1">
+      <link rel="stylesheet" href="../mycasa-src/css/furnace.min.css">
+      <link rel="stylesheet" href="../mycasa-src/css/casa.css">
+	   
+	   
+	   
+      <script type="text/javascript" src="../mycasa-src/js/furnace.min.js"></script>
+      <script type="text/javascript" src="../mycasa-src/js/jquery.min.js"></script>
+      <script type="text/javascript" src="../mycasa-src/js/jquery.js"></script>
+      <script type="text/javascript">
+         /* page specific js */
+         
+		  $( document ).ready(function() {
+
+			  $(".registration-type").on('input', function() {
+				  
+				  if($("input:radio[name='radio-ex']:checked").val()=="commercial"){
+					  
+					  $("#commercial").css("display","block");
+					  
+				  } else {
+					  
+					  $("#commercial").css("display","none");
+					  
+				  }
+				  
+			  });
+			  
+			  
+			  $("#no-serial").change(function() {
+				  
+				if ( $(this).is(':checked') ) {
+					$("#text-input-block3").prop('disabled', true);
+					$("#no-serial-callout").css("display","block");
+				} else {
+					$("#text-input-block3").prop('disabled', false);
+					$("#no-serial-callout").css("display","none");
+				}
+				 
+			   });
+			  
+			   $("#category").on('input', function() {
+			   
+			   		if($(this).val()==6){
+			   			 $("#other-manufacturer").css("display","block");
+			   		} else {
+			   			 $("#other-manufacturer").css("display","none");
+			   		}
+			   
+			   
+			   		if($(this).val()==5){
+			   			 $("#home-build").css("display","block");
+			   			 $(".default-values").css("display","none");
+			   		} else {
+			   			 $("#home-build").css("display","none");
+			   			 $(".default-values").css("display","block");
+			   		}
+
+
+			   });
+			  
+			  
+			  
+		  });
+
+		  
+		  
+         
+      </script>
+   </head>
+   <body class="live-demo au-body au-grid">
+
+      <main class="au-grid">
+         <div class="header">
+            <div class="container">
+               <div class="row">
+                  <div class="logo au-body au-body--dark">
+                     <a href="index.html"><img src="../mycasa-src/img/CASALOGO-white-i.svg"></a>
+                  </div>
+                  <div class="casa-menu">
+                  
+                  	<div id="dropdown-menu">
+						<div id="dd-menu"><a class="au-btn au-btn--dark menu" href="#"><img src="../mycasa-src/img/menu.png" height="20" />Menu</a></div>
+						<div id="dd-close"><a class="au-btn au-btn--dark menu" href="#"><img src="../mycasa-src/img/close.png" height="20" />Close</a><br />
+						<br />
+						<p id="mycasa-home"><a href="#">myCASA home</a></p>
+						<p><a href="#">Switch profile</a></p>
+						<p><a href="mycasa-signed-out.html">Sign out</a></p>
+						</div>
+                  
+                  
+                  </div>
+               </div></div>
+            </div>
+         </div>
+         <div class="body">
+			<div class="banner">
+				<div class=container>
+					<div class="row">
+					 <div class="col-md-12">
+				This service is currently in beta, we encourage you to <a href="feedback.html">provide feedback</a>
+				</div>
+				</div>
+			</div>
+		</div>
+         <div class="container">
+			 <div class="row">
+			 			  <div class="col-lg-6 col-md-6 col-xs-12">
+			
+               <nav class="au-breadcrumbs" aria-label="breadcrumb">
+                  <ul class="au-link-list au-link-list--inline">
+                     <li><a href="welcome.html">myCASA</a></li>
+                     <li><abbr title="Remotely piloted aircraft">RPA</abbr> registration</li>
+                  </ul>
+               </nav>
+               <header class="au-header" role="banner">
+                  <h1 class="break desktop au-header-heading"><abbr title="Remotely piloted aircraft">RPA</abbr> registration </h1>
+                  <a class="au-direction-link au-direction-link--left" href="registration-information-please-add.html">Back</a>
+               </header>
+			 
+
+		
+<h2><abbr title="Remotely piloted aircraft">RPA</abbr> details</h2>
+							  <br>
+
+			 
+			 <label for="category" class="casa-label-guidance">Manufacturer</label>
+							  
+			<p class="casa-form-guidance">
+			Please select your <abbr title="Remotely piloted aircraft">RPA</abbr>'s manufacturer
+			</p>
+							  
+								<select id="category" class="au-select au-select--block">
+								
+								
+								
+								
+								
+								
+  <option value="1">Please select</option>
+  <option value="2">DJI</option>
+  <option value="3">Parrot</option>
+  <option value="4">Yuneec</option>
+  <option value="6">Other manufacturer</option>	
+
+  <option value="5">Home built</option>
+								</select>
+			
+			 <br><br>
+			 
+			 
+			 
+			 	<div id="other-manufacturer" style="display:none;">
+			 	<label class="casa-label-guidance" for="text-input-block">Manufacturer name</label>
+					
+					
+					<p class="casa-form-guidance">
+			Please enter the name of your <abbr title="Remotely piloted aircraft">RPA</abbr>'s manufacturer
+			</p>
+					
+				<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block" type="text" value="">
+			 
+			 			 <br>
+			 	</div>
+			 
+			 
+			 
+			 	<div id="home-build" style="display:none;">
+			 			<div class="form-section">
+								<label for="category" class="casa-label-guidance"><abbr title="Remotely piloted aircraft">RPA</abbr> category</label>
+							
+							
+							<p class="casa-form-guidance">
+			Please select your <abbr title="Remotely piloted aircraft">RPA</abbr>'s category/type.  <a href="#">What are these?</a>
+			</p>
+							
+								<select id="category" class="au-select au-select--block">
+									<option value="1" selected="selected">Please select</option>
+									<option value="2">Aeroplane</option>
+									<option value="3">Helicopter</option>
+									<option value="4">Multi Rotor</option>
+									<option value="5">Airship</option>
+									<option value="6">Powered Lift</option>
+								</select>
+							</div>
+			 				<br>
+			 				
+			 				
+			 					<label class="casa-label-guidance" for="text-input-block1"><abbr title="Remotely piloted aircraft">RPA</abbr> weight (grams)</label>
+					
+					<p class="casa-form-guidance">
+			Please enter your <abbr title="Remotely piloted aircraft">RPA</abbr>'s weight in grams. This includes any accessories or attachments on the <abbr title="Remotely piloted aircraft">RPA</abbr> such as cameras or gimbals.
+			</p>
+					
+				<input class="au-text-input au-text-input--block" name="text-input-block1" id="text-input-block1" type="text" value="">
+			 				
+				 </div>
+			 
+			 
+			 
+			 	<div class="default-values">
+				<label for="text-input-block2" class="casa-label-guidance">Model name</label>
+					
+					
+					<p class="casa-form-guidance">
+			Please enter your <abbr title="Remotely piloted aircraft">RPA</abbr>'s model name; for example <em>Mavic</em>, <em>Bebop</em>, <em>RC Drone</em> or <em>Selfie Drone</em>
+			</p>
+					
+				<input class="au-text-input au-text-input--block" name="text-input-block2" id="text-input-block2" type="text" value="">
+			 
+					
+							  </div>
+			 			 <br>
+			 
+				<label for="text-input-block3" class="casa-label-guidance">Serial number</label>
+					
+					<p class="casa-form-guidance">
+			Please select your <abbr title="Remotely piloted aircraft">RPA</abbr>'s serial number. <a href="#">How do I find this?</a>
+			</p>
+					
+				<input class="au-text-input au-text-input--block" name="text-input-block3" id="text-input-block3" type="text" value="">
+					<br>
+													<label class="au-control-input">
+				  <input class="au-control-input__input" type="checkbox" name="checkbox-ex" id="no-serial">
+				  <span class="au-control-input__text">No serial number available</span>
+				</label>
+				
+					<div id="no-serial-callout" style="display:none;">
+					
+					<br />
+					<p class="au-callout">
+					If your drone doesn't have a serial number or you can't find it, we will give you a registration number
+						after you complete your registration that you must affix to your <abbr title="Remotely piloted aircraft">RPA</abbr>
+					</p>
+					
+					
+					</div>
+					
+					
+							  
+							  <br /> <br />
+
+			   <p class="casa-form-descriptor">What is the intended use of your <abbr title="Remotely piloted aircraft">RPA</abbr>?</p>
+							
+				<br>
+				<label class="au-control-input">
+				  <input class="au-control-input__input registration-type" type="radio" name="radio-ex" checked value="fun">
+				  <span class="au-control-input__text">For fun</span>
+				</label>
+				<br>
+			 <br>
+				<label class="au-control-input">
+				  <input class="au-control-input__input registration-type" type="radio" name="radio-ex" value="commercial">
+				  <span class="au-control-input__text">Business or commercial<br>
+					(Including excluded category)</span>
+				</label>
+
+			   <div class="default-values">
+				<div id="commercial" style="display:none;">
+					
+					<br />
+					
+					 <div class="au-callout">
+                     
+                        <p>You should only register an <abbr title="Remotely piloted aircraft">RPA</abbr> for business or commercial use if you are the owner of the <abbr title="Remotely piloted aircraft">RPA</abbr>. If the <abbr title="Remotely piloted aircraft">RPA</abbr> is owned by an organisation then the <abbr title="Remotely piloted aircraft">RPA</abbr> should be <a href="#">registered under that organisation</a>.</p>
+                      
+					
+               </div>
+					<br />
+					<br />
+					
+					 <p class="casa-form-descriptor">What is the weight class of your <abbr title="Remotely piloted aircraft">RPA</abbr>?</p>
+				
+				<br>
+				<label class="au-control-input">
+				  <input class="au-control-input__input" type="radio" name="radio-weight">
+				  <span class="au-control-input__text">1g - 24.9kg: <strong>$100</strong></span>
+				</label>
+				<br>
+			 <br>
+				<label class="au-control-input">
+				  <input class="au-control-input__input" type="radio" name="radio-weight">
+				  <span class="au-control-input__text">25kg - 150kg: <strong>$160</strong></span>
+				</label>
+					<br><br>
+									                <div class="au-callout">
+                     
+                        <p>If your <abbr title="Remotely piloted aircraft">RPA</abbr> weighs more than 150kg you are required to register it as a <a href="#">VH Registered Aircraft</a>.</p>
+                      
+					
+               </div>
+					
+					
+					
+					</div>
+				</div>
+					
+					
+					 <br /><br />
+					
+<p class="casa-form-descriptor">Is this <abbr title="Remotely piloted aircraft">RPA</abbr>  currently registered in another country?</p>
+							
+				<br>
+				<label class="au-control-input">
+				  <input class="au-control-input__input" type="radio" name="radio-ex1">
+				  <span class="au-control-input__text">Yes</span>
+				</label>
+				<br>
+			 <br>
+				<label class="au-control-input">
+				  <input class="au-control-input__input" type="radio" name="radio-ex1" checked>
+				  <span class="au-control-input__text" >No</span>
+				</label>
+
+			 
+			 
+
+			 
+			 <br><br><br>
+				   
+				<div class="form-navigation">
+
+				<a class="au-btn" href="registration-information-single.html">Save <abbr title="Remotely piloted aircraft">RPA</abbr></a>
+					
+
+
+
+
+					
+
+				</div>
+				               <hr />
+            <a href="arn-saved.html" class="au-btn au-btn--secondary">
+            Save and exit application
+            </a>  
+				   
+            </div>
+			 </div>
+			 </div>
+		  </div>
+
+
+          <div class="footer">
+           
+            <div class="footer-wrapper">
+               <iframe src="../mycasa-src/footer.html" frameborder="0" border="0" scrolling="no"></iframe>
+            </div>
+         </div>
+      </main>
+   </body>
+</html>
