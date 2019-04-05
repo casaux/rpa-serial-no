@@ -8,7 +8,11 @@
       <link rel="stylesheet" href="../mycasa-src/css/furnace.min.css">
       <link rel="stylesheet" href="../mycasa-src/css/casa.css">
 	   
+	   <style>
 	   
+		   .casa-drone-instructions{display: none;}
+		   .casa-drone-instructions strong{font-weight:600;color:#000;}
+	   </style>
 	   
       <script type="text/javascript" src="../mycasa-src/js/furnace.min.js"></script>
       <script type="text/javascript" src="../mycasa-src/js/jquery.min.js"></script>
@@ -64,6 +68,18 @@
 
 
 			   });
+			  
+			  
+			  
+			  	 $("#model-name-version").change(function() {
+					 
+					 $(".casa-drone-instructions").css("display","none");
+					 var guidanceDJI = "#dji-"+$(this).val();
+					 $(guidanceDJI).css("display","block");
+					 
+					 
+				 });
+			  
 			  
 			  
 			  
@@ -143,8 +159,7 @@
 								
 								
 								
-  <option value="1">Please select</option>
-  <option value="2">DJI</option>
+  <option value="2" selected>DJI</option>
   <option value="3">Parrot</option>
   <option value="4">Yuneec</option>
   <option value="6">Other manufacturer</option>	
@@ -205,14 +220,40 @@
 			 
 			 
 			 	<div class="default-values">
-				<label for="text-input-block2" class="casa-label-guidance">Model name</label>
+				<label for="model-name-version" class="casa-label-guidance">Model name</label>
 					
 					
 					<p class="casa-form-guidance">
-			Please enter your <abbr title="Remotely piloted aircraft">RPA</abbr>'s model name; for example <em>Mavic</em>, <em>Bebop</em>, <em>RC Drone</em> or <em>Selfie Drone</em>
+			Please enter your <abbr title="Remotely piloted aircraft">RPA</abbr>'s model name and version
 			</p>
 					
-				<input class="au-text-input au-text-input--block" name="text-input-block2" id="text-input-block2" type="text" value="">
+					
+				
+					
+				<div id="dji-list">
+					<select id="model-name-version" class="au-select au-select--block">
+						<option value="0">Please select model name and version</option>
+						<option value="1">Inspire 1</option>
+						<option value="2">Inspire 2</option>
+						<option value="3">Mavic</option>
+						<option value="4">Mavic Air</option>
+						<option value="5">Matrice</option>
+						<option value="6">Phantom</option>
+						<option value="7">Phantom 2</option>
+						<option value="8">Phantom 3 / 3 Pro</option>
+						<option value="9">Phantom 4 / 4 Pro</option>
+						<option value="10">Spark</option>
+						
+					
+						
+						
+					</select>	
+				</div>
+					
+					
+					
+					
+					
 			 
 					
 							  </div>
@@ -221,16 +262,61 @@
 				<label for="text-input-block3" class="casa-label-guidance">Serial number</label>
 					
 					<p class="casa-form-guidance">
-			Please select your <abbr title="Remotely piloted aircraft">RPA</abbr>'s serial number. <a href="drones.html">How do I find this?</a>
-			</p>
+			Please select your <abbr title="Remotely piloted aircraft">RPA</abbr>'s serial number. 
+						
+							  </p>
+							  
+							  <input class="au-text-input au-text-input--block" name="text-input-block3" id="text-input-block3" type="text" value="">
+							  
+							  <br />
+							  			  
+					<div class="casa-form-guidance casa-drone-instructions" id="dji-1"><strong>How do I find my serial number?</strong><br />The serial number for your drone can be found lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum enim et augue placerat pellentesque. Nulla facilisi. Integer quis dui nunc. Nulla facilisi. Donec egestas ornare lacinia.</div>
+					  <div class="casa-form-guidance casa-drone-instructions" id="dji-2"><strong>How do I find my serial number?</strong><br />The serial number for your drone can be found lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum enim et augue placerat pellentesque. Nulla facilisi. Integer quis dui nunc. Nulla facilisi. Donec egestas ornare lacinia.</div>	 
+					  <div class="casa-form-guidance casa-drone-instructions" id="dji-3"><strong>How do I find my serial number?</strong><br />The serial number for your drone can be found lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum enim et augue placerat pellentesque. Nulla facilisi. Integer quis dui nunc. Nulla facilisi. Donec egestas ornare lacinia.</div>	 
+					  <div class="casa-form-guidance casa-drone-instructions" id="dji-4"><strong>How do I find my serial number?</strong><br />The serial number for your drone can be found lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum enim et augue placerat pellentesque. Nulla facilisi. Integer quis dui nunc. Nulla facilisi. Donec egestas ornare lacinia.</div>	 
+					  <div class="casa-form-guidance casa-drone-instructions" id="dji-5"><strong>How do I find my serial number?</strong><br />The serial number for your drone can be found lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum enim et augue placerat pellentesque. Nulla facilisi. Integer quis dui nunc. Nulla facilisi. Donec egestas ornare lacinia.</div>	 
+					  <div class="casa-form-guidance casa-drone-instructions" id="dji-6"><strong>How do I find my serial number?</strong><br />The serial number for your drone can be found lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum enim et augue placerat pellentesque. Nulla facilisi. Integer quis dui nunc. Nulla facilisi. Donec egestas ornare lacinia.</div>	 
+					  <div class="casa-form-guidance casa-drone-instructions" id="dji-7"><strong>How do I find my serial number?</strong><br />The serial number for your drone can be found lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum enim et augue placerat pellentesque. Nulla facilisi. Integer quis dui nunc. Nulla facilisi. Donec egestas ornare lacinia.</div>	 
+					  <div class="casa-form-guidance casa-drone-instructions" id="dji-8"><strong>How do I find my serial number?</strong><br />The serial number for your drone can be found lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum enim et augue placerat pellentesque. Nulla facilisi. Integer quis dui nunc. Nulla facilisi. Donec egestas ornare lacinia.</div>
+							  
+							  
+					  <div class="casa-form-guidance casa-drone-instructions" id="dji-9"><p><strong>How do I find my serial number?</strong><br />The serial number for your drone is located inside the body of the drone. To find the serial number please remove the battery and you will be able to see the serial number inside the battery compartment. It will be a 14 character serial number split across two lines next to a QR code. You may wish to use a QR code scanner to scan the code and copy and paste this into the drone and RPA registration form.</p>
+
+               
+
+                <p>The serial number also appears on the outside of the box of your Phantom 4. It is under the larger barcode prefixed with "S/N" and is the same 14 character serial you will find inside the battery compartment of your aircraft.</p></div>	 
+			
+							   <div class="casa-form-guidance casa-drone-instructions" id="dji-10"><strong>How do I find my serial number?</strong><br />The serial number for your drone can be found lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum enim et augue placerat pellentesque. Nulla facilisi. Integer quis dui nunc. Nulla facilisi. Donec egestas ornare lacinia.</div>
+							  
+							   <div class="casa-form-guidance casa-drone-instructions" id="dji-11"><strong>How do I find my serial number?</strong><br />The serial number for your drone can be found lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum enim et augue placerat pellentesque. Nulla facilisi. Integer quis dui nunc. Nulla facilisi. Donec egestas ornare lacinia.</div>
+							  
+							   <div class="casa-form-guidance casa-drone-instructions" id="dji-12"><strong>How do I find my serial number?</strong><br />The serial number for your drone can be found lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum enim et augue placerat pellentesque. Nulla facilisi. Integer quis dui nunc. Nulla facilisi. Donec egestas ornare lacinia.</div>
+							  
+							   <div class="casa-form-guidance casa-drone-instructions" id="dji-13"><strong>How do I find my serial number?</strong><br />The serial number for your drone can be found lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum enim et augue placerat pellentesque. Nulla facilisi. Integer quis dui nunc. Nulla facilisi. Donec egestas ornare lacinia.</div>
 					
-				<input class="au-text-input au-text-input--block" name="text-input-block3" id="text-input-block3" type="text" value="">
+				
+							  
+							  
+							  
+							  
 					<br>
 													<label class="au-control-input">
 				  <input class="au-control-input__input" type="checkbox" name="checkbox-ex" id="no-serial">
 				  <span class="au-control-input__text">No serial number available</span>
 				</label>
 				
+						
+				
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
 					<div id="no-serial-callout" style="display:none;">
 					
 					<br />
