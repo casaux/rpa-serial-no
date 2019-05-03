@@ -69,7 +69,18 @@
 
 			   });
 			  
-			  
+			  	$("#category").change(function() {
+					 
+					 if($(this).val()==2){
+						 $("#text-input-block2").css("display","none");
+						 $("#dji-list").css("display","block");
+						
+					 } else {
+						 $("#text-input-block2").css("display","block");
+					 }
+					 
+					 
+				 });
 			  
 			  	 $("#model-name-version").change(function() {
 					 
@@ -153,17 +164,11 @@
 			</p>
 							  
 								<select id="category" class="au-select au-select--block">
-								
-								
-								
-								
-								
-								
-  <option value="2" selected>DJI</option>
+								<option value="1">Please select manufacturer</option>						
+  <option value="2">DJI</option>
   <option value="3">Parrot</option>
   <option value="4">Yuneec</option>
   <option value="6">Other manufacturer</option>	
-
   <option value="5">Home built</option>
 								</select>
 			
@@ -196,7 +201,7 @@
 			</p>
 							
 								<select id="category" class="au-select au-select--block">
-									<option value="1" selected="selected">Please select</option>
+									<option value="1">Please select</option>
 									<option value="2">Aeroplane</option>
 									<option value="3">Helicopter</option>
 									<option value="4">Multi Rotor</option>
@@ -228,9 +233,9 @@
 			</p>
 					
 					
-				
+				<input class="au-text-input au-text-input--block" name="text-input-block2" id="text-input-block2" type="text" value="">
 					
-				<div id="dji-list">
+				<div id="dji-list" style="display:none;">
 					<select id="model-name-version" class="au-select au-select--block">
 						<option value="0">Please select model name and version</option>
 						<option value="1">Inspire 1</option>
